@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Venture | Immersive Virtual Specialists</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Dream Venture offers immersive VR solutions, 3D/2D spatial game development, and specialized AR/VR bootcamps and training modules.">
+    <meta name="keywords" content="Virtual Reality, VR Ecosystems, Spatial Development, AR Training, Unity Bootcamp, Interactive Games">
+    <meta name="author" content="Dream Venture">
+    
+    <!-- OpenGraph / Social Meta -->
+    <meta property="og:title" content="Dream Venture | Immersive Virtual Specialists">
+    <meta property="og:description" content="Architecting immersive simulation environments and real-time 3D spatial experiences.">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         :root {
             --primary: #f3a32a; 
@@ -85,9 +97,24 @@
         .showcase-item img.main-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 1s; }
         .showcase-item.active img.main-img { filter: brightness(0.1) blur(15px); position: absolute; }
 
+        /* Showcase Preview Label */
+        .card-preview-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%);
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        .showcase-item.active .card-preview-overlay { opacity: 0; pointer-events: none; }
+        .card-preview-title { font-family: 'Orbitron'; font-size: 1.2rem; color: var(--primary); font-weight: 700; letter-spacing: 2px; }
+
         .active-content {
             position: absolute; inset: 0; padding: 50px 60px; display: flex; flex-direction: column; 
-            opacity: 0; visibility: hidden; transition: 0.5s ease 0.4s; overflow-y: auto;
+            opacity: 0; visibility: hidden; transition: 0.5s ease 0.4s; overflow-y: auto; z-index: 3;
         }
         .showcase-item.active .active-content { opacity: 1; visibility: visible; }
         
@@ -96,8 +123,20 @@
         .project-card:hover { border-color: var(--primary); background: rgba(243, 163, 42, 0.1); transform: translateY(-3px); }
         .project-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
 
-        /* --- Team --- */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        /* --- Team Grid Layout (Adjusted to 3x3) --- */
+        .team-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 40px; 
+            text-align: center; 
+        }
+        @media (max-width: 900px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .team-grid { grid-template-columns: 1fr; }
+        }
+
         .profile-frame { width: 160px; height: 210px; margin: 0 auto 15px; clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%); background: var(--glass); overflow: hidden; border: 1px solid var(--glass-border); }
         .profile-frame img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: none; }
         .team-card:hover .profile-frame img { transform: scale(1.05); }
@@ -122,7 +161,7 @@
 
     <nav>
         <div class="logo-wrap">
-            <img src="images/dreamventurelogo.png" alt="DV" class="nav-logo">
+            <img src="images/dreamventurelogo.png" alt="Dream Venture Logo" class="nav-logo">
             <div class="system-status"><div class="pulse"></div>SYSTEM ACTIVE</div>
         </div>
         <div class="nav-links">
@@ -135,7 +174,7 @@
     </nav>
 
     <section class="hero">
-        <img src="images/dvlogo.png" alt="Dream Venture" class="hero-logo" data-aos="fade-up">
+        <img src="images/dvlogo.png" alt="Dream Venture Symbol" class="hero-logo" data-aos="fade-up">
         <p class="script-font">Virtual Specialist</p>
         <h1 class="title-font">DREAM VENTURE</h1>
         <p class="tagline">Where Dreams Take Shape</p>
@@ -164,38 +203,38 @@
         </div>
     </section>
 
-    <!-- Team Collective -->
+    <!-- Team Collective (Formatted into 3x3 layout) -->
     <section class="section" id="team">
         <div class="label-container"><div class="theme-pill"></div><span class="label-text">COLLECTIVE</span></div>
         <h2 class="main-headline">The Minds Behind The Dream.</h2>
         <div class="team-grid">
             <div class="team-card" data-aos="fade-up">
-                <div class="profile-frame"><img src="images/alyadp.jpg"></div>
+                <div class="profile-frame"><img src="images/alyadp.jpg" alt="Alya Batrisyia" loading="lazy"></div>
                 <h3 style="font-family:Orbitron; font-size:0.9rem;">ALYA BATRISYIA</h3>
                 <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">CEO | TRAINER | DEVELOPER</p>
             </div>
             <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="profile-frame"><img src="images/nabil.jpg"></div>
+                <div class="profile-frame"><img src="images/nabil.jpg" alt="Nabil Hakimi" loading="lazy"></div>
                 <h3 style="font-family:Orbitron; font-size:0.9rem;">NABIL HAKIMI</h3>
                 <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | 3D ARTIST | DEVELOPER</p>
             </div>
             <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="profile-frame"><img src="images/limprofile.png"></div>
+                <div class="profile-frame"><img src="images/limprofile.png" alt="Najmi Lim" loading="lazy"></div>
                 <h3 style="font-family:Orbitron; font-size:0.9rem;">NAJMI LIM</h3>
                 <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">2D ARTIST | DEVELOPER </p>
             </div>
             <div class="team-card" data-aos="fade-up">
-                <div class="profile-frame"><img src="images/zuldp.jpeg"></div>
+                <div class="profile-frame"><img src="images/zuldp.jpeg" alt="Zulhafif" loading="lazy"></div>
                 <h3 style="font-family:Orbitron; font-size:0.9rem;">ZULHAFIF</h3>
                 <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | DEVELOPER | ANIMATOR</p>
             </div>
             <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="profile-frame"><img src="images/ipangdp.jpeg"></div>
+                <div class="profile-frame"><img src="images/ipangdp.jpeg" alt="Irfan Azan" loading="lazy"></div>
                 <h3 style="font-family:Orbitron; font-size:0.9rem;">IRFAN AZAN </h3>
                 <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | DEVELOPER </p>
             </div>
             <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="profile-frame"><img src="images/testp.jpg"></div>
+                <div class="profile-frame"><img src="images/samihah.png" alt="Dr. Samihah Dalim" loading="lazy"></div>
                 <h3 style="font-family:Orbitron; font-size:0.9rem;">DR. SAMIHAH DALIM</h3>
                 <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">BENEFACTOR</p>
             </div>
@@ -207,35 +246,50 @@
         <div class="label-container"><div class="theme-pill"></div><span class="label-text">SHOWCASE</span></div>
         <h2 class="main-headline">Core Product Portfolio.</h2>
         <div class="showcase-viewport" id="magicViewport">
+            
+            <!-- Item 0: Virtual Reality -->
             <div class="showcase-item item-0" onclick="runMagicMove(event, this)">
-                <img src="images/vrdev.jpg" class="main-img">
+                <img src="images/vrdev.jpg" class="main-img" alt="Virtual Reality" loading="lazy">
+                <div class="card-preview-overlay">
+                    <h3 class="card-preview-title">Virtual Reality</h3>
+                </div>
                 <div class="active-content">
                     <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">VR ECOSYSTEMS</h3>
                     <div class="project-grid">
-                        <!-- Navigation Restored -->
-                        <a href="flaimevr.html" class="project-card"><img src="images/flaimeposter.png"><h4>FLAIMEVR</h4><p>Firefighting simulation.</p></a>
-                        <a href="edurail.html" class="project-card"><img src="images/edurailposter.png"><h4>EDURAIL</h4><p>Railway training.</p></a>
+                        <a href="flaimevr.html" class="project-card"><img src="images/flaimeposter.png" alt="FLAIMEVR" loading="lazy"><h4>FLAIMEVR</h4><p>Firefighting simulation.</p></a>
+                        <a href="edurail.html" class="project-card"><img src="images/edurailposter.png" alt="EDURAIL" loading="lazy"><h4>EDURAIL</h4><p>Railway training.</p></a>
                     </div>
                 </div>
             </div>
+
+            <!-- Item 1: 3D & 2D Games -->
             <div class="showcase-item item-1" onclick="runMagicMove(event, this)">
-                <img src="images/gamedev.jpeg" class="main-img">
+                <img src="images/gamedev.jpeg" class="main-img" alt="3D & 2D Games" loading="lazy">
+                <div class="card-preview-overlay">
+                    <h3 class="card-preview-title">3D & 2D Games</h3>
+                </div>
                 <div class="active-content">
                     <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">INTERACTIVE GAMES</h3>
                     <div class="project-grid">
-                        <a href="voidwalker.html" class="project-card"><img src="images/g1.jpg"><h4>Void Walker</h4><p>Rhythm exploration.</p></a>
+                        <a href="voidwalker.html" class="project-card"><img src="images/g1.jpg" alt="Void Walker" loading="lazy"><h4>Void Walker</h4><p>Rhythm exploration.</p></a>
                     </div>
                 </div>
             </div>
+
+            <!-- Item 2: Bootcamp -->
             <div class="showcase-item item-2" onclick="runMagicMove(event, this)">
-                <img src="images/training.jpg" class="main-img">
+                <img src="images/training.jpg" class="main-img" alt="Bootcamp" loading="lazy">
+                <div class="card-preview-overlay">
+                    <h3 class="card-preview-title">Bootcamp</h3>
+                </div>
                 <div class="active-content">
                     <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">TRAINING MODULES</h3>
                     <div class="project-grid">
-                        <a href="training.html" class="project-card"><img src="images/trainarvr.jpg"><h4>VR BOOTCAMP</h4><p>Intensive tech training.</p></a>
+                        <a href="training.html" class="project-card"><img src="images/trainarvr.jpg" alt="VR Bootcamp" loading="lazy"><h4>VR BOOTCAMP</h4><p>Intensive tech training.</p></a>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -246,11 +300,11 @@
         <div class="contact-container">
             <div data-aos="fade-right">
                 <h3 style="font-family:Orbitron; color:var(--primary); margin-bottom:20px;">DIRECT CHANNELS</h3>
-                <a href="https://wa.me/YOUR_NUMBER" class="contact-link" target="_blank">
+                <a href="https://wa.me/YOUR_NUMBER" class="contact-link" target="_blank" rel="noopener">
                     <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;"></i>
                     <span>WhatsApp Chat</span>
                 </a>
-                <a href="https://instagram.com/dreamventure" class="contact-link" target="_blank">
+                <a href="https://instagram.com/dreamventure" class="contact-link" target="_blank" rel="noopener">
                     <i class="fa-brands fa-instagram" style="font-size:1.5rem;"></i>
                     <span>Instagram / @dreamventure</span>
                 </a>
@@ -264,7 +318,7 @@
                 </a>
             </div>
             <div data-aos="fade-left">
-                <form class="inquiry-form">
+                <form class="inquiry-form" onsubmit="event.preventDefault();">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                         <input type="text" placeholder="NAME" required>
                         <input type="text" placeholder="ORGANIZATION">
@@ -278,27 +332,30 @@
     </section>
 
     <div class="floating-controls">
-        <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="float-btn"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://instagram.com/dreamventure" target="_blank" class="float-btn"><i class="fa-brands fa-instagram"></i></a>
-        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="float-btn"><i class="fa-solid fa-arrow-up"></i></button>
+        <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener" class="float-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com/dreamventure" target="_blank" rel="noopener" class="float-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="float-btn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
     </div>
 
     <footer>SSM: 003768939-D &copy; 2026 DREAM VENTURE | dreamventure.info@gmail.com</footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+        });
 
-        /* --- Original Particle Background --- */
+        /* --- Optimized Particle Canvas --- */
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouse = { x: null, y: null, radius: 150 };
-
-        window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        let animationFrameId;
 
         class Particle {
             constructor() {
+                this.reset();
+            }
+            reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = 1.2;
@@ -306,34 +363,44 @@
                 this.vy = (Math.random() - 0.5) * 0.4;
             }
             update() {
-                this.x += this.vx; this.y += this.vy;
+                this.x += this.vx; 
+                this.y += this.vy;
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
             draw() {
                 ctx.fillStyle = 'rgba(243, 163, 42, 0.6)';
-                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                ctx.beginPath(); 
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
+                ctx.fill();
             }
         }
 
         function initBg() {
-            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight;
             particles = [];
-            let count = (canvas.width * canvas.height) / 9000;
+            let count = Math.min(Math.floor((canvas.width * canvas.height) / 10000), 120);
             for (let i = 0; i < count; i++) particles.push(new Particle());
         }
 
         function animateBg() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animateBg);
+            animationFrameId = requestAnimationFrame(animateBg);
         }
-        window.addEventListener('resize', initBg);
-        initBg(); animateBg();
 
-        /* --- Magic Showcase Logic --- */
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initBg, 200);
+        });
+
+        initBg(); 
+        animateBg();
+
+        /* --- Showcase Move Logic --- */
         function runMagicMove(event, el) {
-            // FIX: If user clicks a project-card (link), let the navigation happen normally
             if (event.target.closest('.project-card')) return;
             
             event.stopPropagation();
@@ -341,13 +408,15 @@
             let sCount = 0;
             allItems.forEach(item => {
                 item.classList.remove('active', 'shrunk', 'pos-0', 'pos-1');
-                if (item === el) item.classList.add('active');
-                else {
+                if (item === el) {
+                    item.classList.add('active');
+                } else {
                     item.classList.add('shrunk', `pos-${sCount}`);
                     sCount++;
                 }
             });
         }
+
         function resetMagicMove() {
             document.querySelectorAll('.showcase-item').forEach(item => {
                 item.classList.remove('active', 'shrunk', 'pos-0', 'pos-1');
