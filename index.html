@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Venture | Immersive Virtual Specialists</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Dream Venture offers immersive VR solutions, 3D/2D spatial game development, and specialized AR/VR bootcamps and training modules.">
-    <meta name="keywords" content="Virtual Reality, VR Ecosystems, Spatial Development, AR Training, Unity Bootcamp, Interactive Games">
+    <!-- Primary Meta Tags -->
+    <title>Dream Venture | Immersive VR Solutions & Spatial Game Development</title>
+    <meta name="title" content="Dream Venture | Immersive VR Solutions & Spatial Game Development">
+    <meta name="description" content="Dream Venture specializes in immersive Virtual Reality (VR) environments, real-time 3D/2D spatial game development, and high-impact AR/VR training bootcamps.">
+    <meta name="keywords" content="Virtual Reality, VR Ecosystems, Spatial Development, AR Training, Unity Bootcamp, Interactive Games, 3D Game Development, VR Simulation">
     <meta name="author" content="Dream Venture">
-    
-    <!-- OpenGraph / Social Meta -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dreamventure-page.github.io/home/" />
+
+    <!-- OpenGraph / Facebook / LinkedIn Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dreamventure.com/">
     <meta property="og:title" content="Dream Venture | Immersive Virtual Specialists">
     <meta property="og:description" content="Architecting immersive simulation environments and real-time 3D spatial experiences.">
-    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.dreamventure.com/images/dvlogo.png">
 
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.dreamventure.com/">
+    <meta name="twitter:title" content="Dream Venture | Immersive Virtual Specialists">
+    <meta name="twitter:description" content="Architecting immersive simulation environments and real-time 3D spatial experiences.">
+    <meta name="twitter:image" content="https://www.dreamventure.com/images/dvlogo.png">
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Dream Venture",
+      "url": "https://www.dreamventure.com",
+      "logo": "https://www.dreamventure.com/images/dreamventurelogo.png",
+      "description": "Dream Venture specializes in immersive VR solutions, 3D/2D spatial game development, and specialized AR/VR bootcamps.",
+      "email": "dreamventure.info@gmail.com",
+      "identifier": "003768939-D",
+      "knowsAbout": [
+        "Virtual Reality",
+        "Spatial Development",
+        "3D Game Development",
+        "AR/VR Training"
+      ]
+    }
+    </script>
+
+    <!-- Preconnect for Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@200;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -78,13 +115,13 @@
 
         /* --- Showcase Interactive Grid --- */
         #products {
-            padding-bottom: 0px; /* Reduced bottom padding to shorten gap */
+            padding-bottom: 0px; /* Reduced gap between Showcase and Connect */
         }
         #contact {
-            padding-top: 60px; /* Shortened top padding to bring closer to showcase */
+            padding-top: 60px; /* Brought Connect section closer to Showcase */
         }
 
-        .showcase-viewport { position: relative; width: 100%; height: 520px; } /* Reduced viewport height */
+        .showcase-viewport { position: relative; width: 100%; height: 520px; }
         .showcase-item {
             position: absolute; background: var(--glass); border: 1px solid var(--glass-border);
             overflow: hidden; cursor: pointer; z-index: 1;
@@ -125,7 +162,7 @@
         }
         .showcase-item.active .active-content { opacity: 1; visibility: visible; }
         
-        /* Updated: Forced 2-column grid for active popup content */
+        /* Forced 2-column grid layout for active popup content */
         .project-grid { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -174,188 +211,190 @@
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <nav>
-        <div class="logo-wrap">
-            <img src="images/dreamventurelogo.png" alt="Dream Venture Logo" class="nav-logo">
-            <div class="system-status"><div class="pulse"></div>SYSTEM ACTIVE</div>
-        </div>
-        <div class="nav-links">
-            <a href="#capabilities">CAPABILITIES</a>
-            <a href="#team">THE TEAM</a>
-            <a href="#products">SHOWCASE</a>
-            <a href="#contact">CONNECT</a>
-        </div>
-        <button class="btn-nav" onclick="document.getElementById('contact').scrollIntoView()">Inquiry</button>
-    </nav>
+    <header>
+        <nav aria-label="Main Navigation">
+            <div class="logo-wrap">
+                <img src="images/dreamventurelogo.png" alt="Dream Venture - Virtual Specialists Logo" class="nav-logo">
+                <div class="system-status"><div class="pulse"></div>SYSTEM ACTIVE</div>
+            </div>
+            <div class="nav-links">
+                <a href="#capabilities">CAPABILITIES</a>
+                <a href="#team">THE TEAM</a>
+                <a href="#products">SHOWCASE</a>
+                <a href="#contact">CONNECT</a>
+            </div>
+            <button class="btn-nav" onclick="document.getElementById('contact').scrollIntoView()">Inquiry</button>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <img src="images/dvlogo.png" alt="Dream Venture Symbol" class="hero-logo" data-aos="fade-up">
-        <p class="script-font">Virtual Specialist</p>
-        <h1 class="title-font">DREAM VENTURE</h1>
-        <p class="tagline">Where Dreams Take Shape</p>
-    </section>
+    <main>
+        <section class="hero" aria-label="Hero Introduction">
+            <img src="images/dvlogo.png" alt="Dream Venture Symbol" class="hero-logo" data-aos="fade-up">
+            <p class="script-font">Virtual Specialist</p>
+            <h1 class="title-font">DREAM VENTURE</h1>
+            <p class="tagline">Where Dreams Take Shape</p>
+        </section>
 
-    <!-- Expertise -->
-    <section class="section" id="capabilities">
-        <div class="label-container"><div class="theme-pill"></div><span class="label-text">EXPERTISE</span></div>
-        <h2 class="main-headline">We realize your dream, virtually.</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-            <div class="industry-card" data-aos="fade-up">
-                <i class="fa-solid fa-vr-cardboard" style="color:var(--primary); font-size:2rem; margin-bottom:20px;"></i>
-                <h3>VR Solutions</h3>
-                <p>Architecting immersive simulation environments for high-stakes industry training and visualization.</p>
+        <!-- Expertise -->
+        <section class="section" id="capabilities" aria-labelledby="expertise-heading">
+            <div class="label-container"><div class="theme-pill"></div><span class="label-text">EXPERTISE</span></div>
+            <h2 id="expertise-heading" class="main-headline">We realize your dream, virtually.</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <article class="industry-card" data-aos="fade-up">
+                    <i class="fa-solid fa-vr-cardboard" style="color:var(--primary); font-size:2rem; margin-bottom:20px;" aria-hidden="true"></i>
+                    <h3>VR Solutions</h3>
+                    <p>Architecting immersive simulation environments for high-stakes industry training and visualization.</p>
+                </article>
+                <article class="industry-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-microchip" style="color:var(--primary); font-size:2rem; margin-bottom:20px;" aria-hidden="true"></i>
+                    <h3>Spatial Dev</h3>
+                    <p>Developing robust 3D worlds and spatial applications with cutting-edge real-time engine performance.</p>
+                </article>
+                <article class="industry-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-graduation-cap" style="color:var(--primary); font-size:2rem; margin-bottom:20px;" aria-hidden="true"></i>
+                    <h3>Industry Training</h3>
+                    <p>Provide Training on Unity development specifically in AR and VR.</p>
+                </article>
             </div>
-            <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fa-solid fa-microchip" style="color:var(--primary); font-size:2rem; margin-bottom:20px;"></i>
-                <h3>Spatial Dev</h3>
-                <p>Developing robust 3D worlds and spatial applications with cutting-edge real-time engine performance.</p>
-            </div>
-            <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-graduation-cap" style="color:var(--primary); font-size:2rem; margin-bottom:20px;"></i>
-                <h3>Industry Training</h3>
-                <p>Provide Training on Unity development specifically in AR and VR.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team Collective -->
-    <section class="section" id="team">
-        <div class="label-container"><div class="theme-pill"></div><span class="label-text">COLLECTIVE</span></div>
-        <h2 class="main-headline">The Minds Behind The Dream.</h2>
-        <div class="team-grid">
-            <div class="team-card" data-aos="fade-up">
-                <div class="profile-frame"><img src="images/alyadp.jpg" alt="Alya Batrisyia" loading="lazy"></div>
-                <h3 style="font-family:Orbitron; font-size:0.9rem;">ALYA BATRISYIA</h3>
-                <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">CEO | TRAINER | DEVELOPER</p>
+        <!-- Team Collective -->
+        <section class="section" id="team" aria-labelledby="team-heading">
+            <div class="label-container"><div class="theme-pill"></div><span class="label-text">COLLECTIVE</span></div>
+            <h2 id="team-heading" class="main-headline">The Minds Behind The Dream.</h2>
+            <div class="team-grid">
+                <article class="team-card" data-aos="fade-up">
+                    <div class="profile-frame"><img src="images/alyadp.jpg" alt="Alya Batrisyia - CEO, Trainer, and Developer" loading="lazy"></div>
+                    <h3 style="font-family:Orbitron; font-size:0.9rem;">ALYA BATRISYIA</h3>
+                    <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">CEO | TRAINER | DEVELOPER</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-frame"><img src="images/nabil.jpg" alt="Nabil Hakimi - Trainer, 3D Artist, and Developer" loading="lazy"></div>
+                    <h3 style="font-family:Orbitron; font-size:0.9rem;">NABIL HAKIMI</h3>
+                    <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | 3D ARTIST | DEVELOPER</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="profile-frame"><img src="images/limprofile.png" alt="Najmi Lim - 2D Artist and Developer" loading="lazy"></div>
+                    <h3 style="font-family:Orbitron; font-size:0.9rem;">NAJMI LIM</h3>
+                    <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">2D ARTIST | DEVELOPER </p>
+                </article>
+                <article class="team-card" data-aos="fade-up">
+                    <div class="profile-frame"><img src="images/zuldp.jpeg" alt="Zulhafif - Trainer, Developer, and Animator" loading="lazy"></div>
+                    <h3 style="font-family:Orbitron; font-size:0.9rem;">ZULHAFIF</h3>
+                    <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | DEVELOPER | ANIMATOR</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-frame"><img src="images/ipangdp.jpeg" alt="Irfan Azan - Trainer and Developer" loading="lazy"></div>
+                    <h3 style="font-family:Orbitron; font-size:0.9rem;">IRFAN AZAN</h3>
+                    <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | DEVELOPER </p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="profile-frame"><img src="images/samihah.png" alt="Dr. Samihah Dalim - Benefactor" loading="lazy"></div>
+                    <h3 style="font-family:Orbitron; font-size:0.9rem;">DR. SAMIHAH DALIM</h3>
+                    <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">BENEFACTOR</p>
+                </article>
             </div>
-            <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="profile-frame"><img src="images/nabil.jpg" alt="Nabil Hakimi" loading="lazy"></div>
-                <h3 style="font-family:Orbitron; font-size:0.9rem;">NABIL HAKIMI</h3>
-                <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | 3D ARTIST | DEVELOPER</p>
-            </div>
-            <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="profile-frame"><img src="images/limprofile.png" alt="Najmi Lim" loading="lazy"></div>
-                <h3 style="font-family:Orbitron; font-size:0.9rem;">NAJMI LIM</h3>
-                <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">2D ARTIST | DEVELOPER </p>
-            </div>
-            <div class="team-card" data-aos="fade-up">
-                <div class="profile-frame"><img src="images/zuldp.jpeg" alt="Zulhafif" loading="lazy"></div>
-                <h3 style="font-family:Orbitron; font-size:0.9rem;">ZULHAFIF</h3>
-                <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | DEVELOPER | ANIMATOR</p>
-            </div>
-            <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="profile-frame"><img src="images/ipangdp.jpeg" alt="Irfan Azan" loading="lazy"></div>
-                <h3 style="font-family:Orbitron; font-size:0.9rem;">IRFAN AZAN </h3>
-                <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">TRAINER | DEVELOPER </p>
-            </div>
-            <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="profile-frame"><img src="images/samihah.png" alt="Dr. Samihah Dalim" loading="lazy"></div>
-                <h3 style="font-family:Orbitron; font-size:0.9rem;">DR. SAMIHAH DALIM</h3>
-                <p style="color:var(--primary); font-size:0.6rem; letter-spacing:2px;">BENEFACTOR</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Showcase Section -->
-    <section class="section" id="products" onclick="resetMagicMove()">
-        <div class="label-container"><div class="theme-pill"></div><span class="label-text">SHOWCASE</span></div>
-        <h2 class="main-headline">Core Product Portfolio.</h2>
-        <div class="showcase-viewport" id="magicViewport">
-            
-            <!-- Item 0: Virtual Reality -->
-            <div class="showcase-item item-0" onclick="runMagicMove(event, this)">
-                <img src="images/vrdev.jpg" class="main-img" alt="Virtual Reality" loading="lazy">
-                <div class="card-preview-overlay">
-                    <h3 class="card-preview-title">Virtual Reality</h3>
-                </div>
-                <div class="active-content">
-                    <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">VR ECOSYSTEMS</h3>
-                    <div class="project-grid">
-                        <a href="flaimevr.html" class="project-card"><img src="images/flaimeposter.png" alt="FLAIMEVR" loading="lazy"><h4>FLAIMEVR</h4><p>Firefighting simulation.</p></a>
-                        <a href="edurail.html" class="project-card"><img src="images/edurailposter.png" alt="EDURAIL" loading="lazy"><h4>EDURAIL</h4><p>Railway training.</p></a>
+        <!-- Showcase Section -->
+        <section class="section" id="products" aria-labelledby="showcase-heading" onclick="resetMagicMove()">
+            <div class="label-container"><div class="theme-pill"></div><span class="label-text">SHOWCASE</span></div>
+            <h2 id="showcase-heading" class="main-headline">Core Product Portfolio.</h2>
+            <div class="showcase-viewport" id="magicViewport">
+                
+                <!-- Item 0: Virtual Reality -->
+                <div class="showcase-item item-0" onclick="runMagicMove(event, this)">
+                    <img src="images/vrdev.jpg" class="main-img" alt="Virtual Reality Ecosystems" loading="lazy">
+                    <div class="card-preview-overlay">
+                        <h3 class="card-preview-title">Virtual Reality</h3>
+                    </div>
+                    <div class="active-content">
+                        <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">VR ECOSYSTEMS</h3>
+                        <div class="project-grid">
+                            <a href="flaimevr.html" class="project-card"><img src="images/flaimeposter.png" alt="FLAIMEVR Firefighting Simulation Poster" loading="lazy"><h4>FLAIMEVR</h4><p>Firefighting simulation.</p></a>
+                            <a href="edurail.html" class="project-card"><img src="images/edurailposter.png" alt="EDURAIL Railway Training Poster" loading="lazy"><h4>EDURAIL</h4><p>Railway training.</p></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 1: 3D & 2D Games -->
-            <div class="showcase-item item-1" onclick="runMagicMove(event, this)">
-                <img src="images/gamedev.jpeg" class="main-img" alt="3D & 2D Games" loading="lazy">
-                <div class="card-preview-overlay">
-                    <h3 class="card-preview-title">3D & 2D Games</h3>
-                </div>
-                <div class="active-content">
-                    <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">INTERACTIVE GAMES</h3>
-                    <div class="project-grid">
-                        <a href="voidwalker.html" class="project-card"><img src="images/g1.jpg" alt="Void Walker" loading="lazy"><h4>Void Walker</h4><p>Rhythm exploration.</p></a>
-                        <!-- Additional Card for 2-column alignment -->
-                        <a href="#" class="project-card"><img src="images/gamedev.jpeg" alt="Cyber Realm" loading="lazy"><h4>Cyber Realm</h4><p>Spatial action adventure.</p></a>
+                <!-- Item 1: 3D & 2D Games -->
+                <div class="showcase-item item-1" onclick="runMagicMove(event, this)">
+                    <img src="images/gamedev.jpeg" class="main-img" alt="3D and 2D Spatial Games" loading="lazy">
+                    <div class="card-preview-overlay">
+                        <h3 class="card-preview-title">3D & 2D Games</h3>
+                    </div>
+                    <div class="active-content">
+                        <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">INTERACTIVE GAMES</h3>
+                        <div class="project-grid">
+                            <a href="voidwalker.html" class="project-card"><img src="images/g1.jpg" alt="Void Walker Game Screenshot" loading="lazy"><h4>Void Walker</h4><p>Rhythm exploration.</p></a>
+                            <a href="cyberrealm.html" class="project-card"><img src="images/gamedev.jpeg" alt="Cyber Realm Game Screenshot" loading="lazy"><h4>Cyber Realm</h4><p>Spatial action adventure.</p></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item 2: Bootcamp -->
-            <div class="showcase-item item-2" onclick="runMagicMove(event, this)">
-                <img src="images/training.jpg" class="main-img" alt="Bootcamp" loading="lazy">
-                <div class="card-preview-overlay">
-                    <h3 class="card-preview-title">Bootcamp</h3>
-                </div>
-                <div class="active-content">
-                    <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">TRAINING MODULES</h3>
-                    <div class="project-grid">
-                        <a href="training.html" class="project-card"><img src="images/trainarvr.jpg" alt="VR Bootcamp" loading="lazy"><h4>VR BOOTCAMP</h4><p>Intensive tech training.</p></a>
-                        <!-- Additional Card for 2-column alignment -->
-                        <a href="#" class="project-card"><img src="images/vrdev.jpg" alt="AR Workshop" loading="lazy"><h4>AR WORKSHOP</h4><p>Hands-on spatial workshop.</p></a>
+                <!-- Item 2: Bootcamp -->
+                <div class="showcase-item item-2" onclick="runMagicMove(event, this)">
+                    <img src="images/training.jpg" class="main-img" alt="Bootcamp and Training Modules" loading="lazy">
+                    <div class="card-preview-overlay">
+                        <h3 class="card-preview-title">Bootcamp</h3>
+                    </div>
+                    <div class="active-content">
+                        <h3 style="font-family:Orbitron; color:var(--primary); font-size:1.5rem;">TRAINING MODULES</h3>
+                        <div class="project-grid">
+                            <a href="training.html" class="project-card"><img src="images/trainarvr.jpg" alt="VR Bootcamp Training Banner" loading="lazy"><h4>VR BOOTCAMP</h4><p>Intensive tech training.</p></a>
+                            <a href="arworkshop.html" class="project-card"><img src="images/vrdev.jpg" alt="AR Workshop Banner" loading="lazy"><h4>AR WORKSHOP</h4><p>Hands-on spatial workshop.</p></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <!-- Contact & Socials -->
-    <section class="section" id="contact">
-        <div class="label-container"><div class="theme-pill"></div><span class="label-text">CONNECT</span></div>
-        <h2 class="main-headline">Initiate Link.</h2>
-        <div class="contact-container">
-            <div data-aos="fade-right">
-                <h3 style="font-family:Orbitron; color:var(--primary); margin-bottom:20px;">DIRECT CHANNELS</h3>
-                <a href="https://wa.me/YOUR_NUMBER" class="contact-link" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;"></i>
-                    <span>WhatsApp Chat</span>
-                </a>
-                <a href="https://instagram.com/dreamventure" class="contact-link" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-instagram" style="font-size:1.5rem;"></i>
-                    <span>Instagram / @dreamventure</span>
-                </a>
-                <a href="mailto:hello@dreamventure.com" class="contact-link">
-                    <i class="fa-solid fa-envelope" style="font-size:1.5rem;"></i>
-                    <span>hello@dreamventure.com</span>
-                </a>
-                <a href="mailto:dreamventure.info@gmail.com" class="contact-link">
-                    <i class="fa-solid fa-envelope-open-text" style="font-size:1.5rem;"></i>
-                    <span>dreamventure.info@gmail.com</span>
-                </a>
+        <!-- Contact & Socials -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="label-container"><div class="theme-pill"></div><span class="label-text">CONNECT</span></div>
+            <h2 id="contact-heading" class="main-headline">Initiate Link.</h2>
+            <div class="contact-container">
+                <div data-aos="fade-right">
+                    <h3 style="font-family:Orbitron; color:var(--primary); margin-bottom:20px;">DIRECT CHANNELS</h3>
+                    <a href="https://wa.me/60123456789" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;" aria-hidden="true"></i>
+                        <span>WhatsApp Chat</span>
+                    </a>
+                    <a href="https://instagram.com/dreamventure" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram" style="font-size:1.5rem;" aria-hidden="true"></i>
+                        <span>Instagram / @dreamventure</span>
+                    </a>
+                    <a href="mailto:hello@dreamventure.com" class="contact-link">
+                        <i class="fa-solid fa-envelope" style="font-size:1.5rem;" aria-hidden="true"></i>
+                        <span>hello@dreamventure.com</span>
+                    </a>
+                    <a href="mailto:dreamventure.info@gmail.com" class="contact-link">
+                        <i class="fa-solid fa-envelope-open-text" style="font-size:1.5rem;" aria-hidden="true"></i>
+                        <span>dreamventure.info@gmail.com</span>
+                    </a>
+                </div>
+                <div data-aos="fade-left">
+                    <form class="inquiry-form" onsubmit="event.preventDefault();">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <input type="text" placeholder="NAME" aria-label="Your Name" required>
+                            <input type="text" placeholder="ORGANIZATION" aria-label="Organization Name">
+                        </div>
+                        <input type="email" placeholder="EMAIL ADDRESS" aria-label="Email Address" required>
+                        <textarea rows="4" placeholder="PROJECT DETAILS" aria-label="Project Details" required></textarea>
+                        <button type="submit" class="btn-nav" style="width:100%; padding:15px;">TRANSMIT INQUIRY</button>
+                    </form>
+                </div>
             </div>
-            <div data-aos="fade-left">
-                <form class="inquiry-form" onsubmit="event.preventDefault();">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <input type="text" placeholder="NAME" required>
-                        <input type="text" placeholder="ORGANIZATION">
-                    </div>
-                    <input type="email" placeholder="EMAIL ADDRESS" required>
-                    <textarea rows="4" placeholder="PROJECT DETAILS" required></textarea>
-                    <button type="submit" class="btn-nav" style="width:100%; padding:15px;">TRANSMIT INQUIRY</button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <div class="floating-controls">
-        <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener" class="float-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://instagram.com/dreamventure" target="_blank" rel="noopener" class="float-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="float-btn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+        <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" class="float-btn" aria-label="Contact via WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://instagram.com/dreamventure" target="_blank" rel="noopener noreferrer" class="float-btn" aria-label="Visit Instagram Profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="float-btn" aria-label="Scroll back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
     </div>
 
     <footer>SSM: 003768939-D &copy; 2026 DREAM VENTURE | dreamventure.info@gmail.com</footer>
